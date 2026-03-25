@@ -10,18 +10,17 @@ st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 # --- カスタムデザイン (CSS) ---
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
-    html, body, [class*="css"] { font-family: 'Noto Serif JP', serif; }
-    .stApp { background-color: #fdfcfb; }
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+    html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+    .stApp { background-color: #f1f5f9; }
     div[data-testid="metric-container"] {
         background-color: #ffffff;
-        border-top: 3px solid #c5a059;
-        padding: 25px;
-        border-radius: 4px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.02);
+        border: 1px solid #e2e8f0;
+        padding: 20px;
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    h1 { color: #2c2c2c; font-weight: 700; text-align: center; margin-bottom: 40px; }
-    .stTabs [data-baseweb="tab"] { font-family: 'Noto Serif JP', serif; }
+    h1 { font-weight: 800; letter-spacing: -0.02em; color: #1e293b; }
 </style>
 """, unsafe_allow_html=True)
 st.title("📈 プラットフォーム総合KPIダッシュボード")
