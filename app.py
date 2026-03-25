@@ -10,36 +10,28 @@ st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 # --- カスタムデザイン (CSS) ---
 st.markdown("""
 <style>
-    /* 全体のフォント設定：モダンなサンセリフ体（Apple系・Windows系）を優先 */
-    html, body, [class*="css"] {
-        font-family: "Inter", "SF Pro Display", "Helvetica Neue", "Segoe UI", "Hiragino Sans", "Meiryo", sans-serif;
-    }
-
-    /* タイトルのデザイン（文字間隔を少し狭めてスタイリッシュに） */
-    h1 {
-        font-weight: 800 !important;
-        letter-spacing: -0.02em !important;
-        color: #1e293b;
-    }
-
-    /* KPIカードの数字（太字で強調） */
-    div[data-testid="stMetricValue"] {
-        font-weight: 700 !important;
-        font-family: "Inter", sans-serif;
-    }
-
-    /* KPIカードのデザイン（より影を薄く、境界線をシャープに） */
+    /* KPIカードのデザイン */
     div[data-testid="metric-container"] {
         background-color: #ffffff;
-        border: 1px solid #e2e8f0;
+        border: 1px solid #f0f2f6;
         padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
     }
-
-    /* 全体背景をさらにクリーンなグレーに */
+    /* 全体背景色 */
     .stApp {
-        background-color: #f1f5f9;
+        background-color: #f8f9fa;
+    }
+    /* タブのスタイル */
+    .stTabs [data-baseweb="tab-list"] {
+        gap: 10px;
+    }
+    .stTabs [data-baseweb="tab"] {
+        height: 50px;
+        background-color: #ffffff;
+        border-radius: 5px 5px 0 0;
+        gap: 1px;
+        padding-top: 10px;
     }
 </style>
 """, unsafe_allow_html=True)
