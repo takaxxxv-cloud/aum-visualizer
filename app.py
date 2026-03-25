@@ -10,17 +10,32 @@ st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 # --- カスタムデザイン (CSS) ---
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
-    html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-    .stApp { background-color: #f1f5f9; }
+    /* Google Fontsからモダンなフォントを読み込み */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+    
+    html, body, [class*="css"] {
+        font-family: 'Inter', sans-serif;
+    }
+    
+    /* 全体の背景を微かなグレーに */
+    .stApp {
+        background-color: #f8fafc;
+    }
+    
+    /* KPIカードのデザイン（角丸と薄い影） */
     div[data-testid="metric-container"] {
         background-color: #ffffff;
         border: 1px solid #e2e8f0;
+        border-radius: 16px;
         padding: 20px;
-        border-radius: 12px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
-    h1 { font-weight: 800; letter-spacing: -0.02em; color: #1e293b; }
+    
+    /* KPIの数値を少し太く */
+    div[data-testid="stMetricValue"] {
+        font-weight: 800 !important;
+        color: #0f172a;
+    }
 </style>
 """, unsafe_allow_html=True)
 st.title("📈 プラットフォーム総合KPIダッシュボード")
