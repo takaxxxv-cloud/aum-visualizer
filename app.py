@@ -7,6 +7,37 @@ import io
 st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 st.title("📊 プラットフォーム総合KPIダッシュボード")
 
+# --- ここからデザイン調整用のコードを追加 ---
+
+# 1. カスタムCSS（KPIを「カード風」にして影をつける、余白の調整など）
+st.markdown("""
+<style>
+    /* メトリック（KPI）の背景をカード風にする */
+    div[data-testid="metric-container"] {
+        background-color: #ffffff;
+        border: 1px solid #e6e6e6;
+        padding: 5% 10%;
+        border-radius: 8px;
+        box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.05);
+    }
+    /* タブの文字を少し大きくする */
+    button[data-baseweb="tab"] > div {
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+    /* 全体の背景をほんのりグレーにして、カードを目立たせる */
+    .stApp {
+        background-color: #f8f9fa;
+    }
+</style>
+""", unsafe_allow_html=True)
+
+# 2. Plotlyグラフのデフォルトテーマを「白背景・すっきり」にする
+import plotly.io as pio
+pio.templates.default = "plotly_white"
+
+# --- 追加コードここまで ---
+
 uploaded_file = st.file_uploader("月次集計データ（CSV）をアップロードしてください", type="csv")
 
 if uploaded_file is not None:
