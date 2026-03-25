@@ -10,34 +10,36 @@ st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 # --- カスタムデザイン (CSS) ---
 st.markdown("""
 <style>
-    html, body, [class*="css"] {
-        font-family: 'Inter', "Segoe UI", sans-serif;
-    }
-
-    /* 全体の背景をダークネイビーに */
-    .stApp {
-        background-color: #0f172a;
-    }
-
-    /* KPIカードのデザイン（ダーク系のすりガラス風） */
-    div[data-testid="metric-container"] {
-        background-color: #1e293b;
-        border: 1px solid #334155;
-        border-radius: 12px;
-        padding: 20px;
-        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
-    }
-
-    /* KPIの数値をエメラルドグリーンにし、発光効果（ネオン）をつける */
-    div[data-testid="stMetricValue"] {
-        color: #10b981 !important;
-        font-weight: bold;
-        text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
-    }
+    /* Google Fontsから上品な明朝体（セリフ体）を読み込み */
+    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
     
-    /* タブの文字色を白系に */
-    button[data-baseweb="tab"] > div {
-        color: #cbd5e1;
+    html, body, [class*="css"] {
+        font-family: 'Noto Serif JP', serif;
+    }
+
+    /* 全体の背景を温かみのあるクリーム色に */
+    .stApp {
+        background-color: #fdfcfb;
+    }
+
+    /* KPIカードのデザイン（上部にゴールドのライン） */
+    div[data-testid="metric-container"] {
+        background-color: #ffffff;
+        border: none;
+        border-top: 4px solid #926c15; /* ゴールドのアクセントライン */
+        border-radius: 4px;
+        padding: 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    }
+
+    /* 指標のラベル色を落ち着いたグレーに */
+    div[data-testid="stMetricLabel"] {
+        color: #717171;
+    }
+
+    /* KPIの数値を深いダークグレーに */
+    div[data-testid="stMetricValue"] {
+        color: #2c2c2c !important;
     }
 </style>
 """, unsafe_allow_html=True)
