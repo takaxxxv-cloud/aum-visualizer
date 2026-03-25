@@ -42,7 +42,7 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-st.title("📈 プラットフォーム総合KPIダッシュボード")
+st.title("📈 Fund KPI Dashboard")
 
 uploaded_file = st.file_uploader("月次集計データ（CSV）をアップロードしてください", type="csv")
 
