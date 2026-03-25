@@ -14,11 +14,15 @@ if uploaded_file is not None:
         # 文字コードの自動判定読み込み
         raw_bytes = uploaded_file.getvalue()
         try:
-            decoded_text = raw_bytes.decode('utf-8')
+        　　# ★修正1：Excel特有の「BOM付きUTF-8」に対応するため'utf-8-sig' に変更
+            decoded_text = raw_bytes.decode('utf-8-sig')
         except UnicodeDecodeError:
             decoded_text = raw_bytes.decode('cp932')
 
         df = pd.read_csv(io.StringIO(decoded_text), sep=None, engine='python')
+        # ★修正2：列名の前後にある「見えない空白や改行」を強制的に削除
+        df.columns =df.columns.str.strip()
+    
         df['年月'] = df['年月'].astype(str) # X軸用に文字列化
 
         # --- 足りない指標の自動計算（CSVにあれば上書き、なければ計算） ---
