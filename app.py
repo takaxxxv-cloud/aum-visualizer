@@ -10,29 +10,17 @@ st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 # --- カスタムデザイン (CSS) ---
 st.markdown("""
 <style>
-    /* KPIカードのデザイン */
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
+    html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
+    .stApp { background-color: #f1f5f9; }
     div[data-testid="metric-container"] {
         background-color: #ffffff;
-        border: 1px solid #f0f2f6;
+        border: 1px solid #e2e8f0;
         padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        border-radius: 12px;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
     }
-    /* 全体背景色 */
-    .stApp {
-        background-color: #f8f9fa;
-    }
-    /* タブのスタイル */
-    .stTabs [data-baseweb="tab-list"] {
-        gap: 10px;
-    }
-    .stTabs [data-baseweb="tab"] {
-        height: 50px;
-        background-color: #ffffff;
-        border-radius: 5px 5px 0 0;
-        gap: 1px;
-        padding-top: 10px;
-    }
+    h1 { font-weight: 800; letter-spacing: -0.02em; color: #1e293b; }
 </style>
 """, unsafe_allow_html=True)
 
