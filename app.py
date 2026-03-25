@@ -10,20 +10,22 @@ st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 # --- カスタムデザイン (CSS) ---
 st.markdown("""
 <style>
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap');
-    html, body, [class*="css"] { font-family: 'Inter', sans-serif; }
-    .stApp { background-color: #f1f5f9; }
+    .stApp { background-color: #0e1117; }
     div[data-testid="metric-container"] {
-        background-color: #ffffff;
-        border: 1px solid #e2e8f0;
+        background-color: #161b22;
+        border: 1px solid #30363d;
         padding: 20px;
         border-radius: 12px;
-        box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+        color: #ffffff;
     }
-    h1 { font-weight: 800; letter-spacing: -0.02em; color: #1e293b; }
+    div[data-testid="stMetricValue"] { color: #00ffa3; font-family: monospace; }
+    h1 { color: #ffffff; border-bottom: 2px solid #00ffa3; padding-bottom: 10px; }
+    /* グラフの背景を透明にする設定 */
+    .js-plotly-plot .plotly .main-svg { background: transparent !important; }
 </style>
 """, unsafe_allow_html=True)
-
+# グラフの色もネオン系に変更
+# fig.update_layout(template="plotly_dark") を追加するとより馴染みます
 st.title("📈 プラットフォーム総合KPIダッシュボード")
 
 uploaded_file = st.file_uploader("月次集計データ（CSV）をアップロードしてください", type="csv")
