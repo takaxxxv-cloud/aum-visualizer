@@ -10,36 +10,34 @@ st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 # --- カスタムデザイン (CSS) ---
 st.markdown("""
 <style>
-    /* Google Fontsから上品な明朝体（セリフ体）を読み込み */
-    @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
-    
     html, body, [class*="css"] {
-        font-family: 'Noto Serif JP', serif;
+        font-family: 'Inter', "Segoe UI", sans-serif;
     }
 
-    /* 全体の背景を温かみのあるクリーム色に */
+    /* 全体の背景をダークネイビーに */
     .stApp {
-        background-color: #fdfcfb;
+        background-color: #0f172a;
     }
 
-    /* KPIカードのデザイン（上部にゴールドのライン） */
+    /* KPIカードのデザイン（ダーク系のすりガラス風） */
     div[data-testid="metric-container"] {
-        background-color: #ffffff;
-        border: none;
-        border-top: 4px solid #926c15; /* ゴールドのアクセントライン */
-        border-radius: 4px;
+        background-color: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 12px;
         padding: 20px;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
     }
 
-    /* 指標のラベル色を落ち着いたグレーに */
-    div[data-testid="stMetricLabel"] {
-        color: #717171;
-    }
-
-    /* KPIの数値を深いダークグレーに */
+    /* KPIの数値をエメラルドグリーンにし、発光効果（ネオン）をつける */
     div[data-testid="stMetricValue"] {
-        color: #2c2c2c !important;
+        color: #10b981 !important;
+        font-weight: bold;
+        text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
+    }
+    
+    /* タブの文字色を白系に */
+    button[data-baseweb="tab"] > div {
+        color: #cbd5e1;
     }
 </style>
 """, unsafe_allow_html=True)
