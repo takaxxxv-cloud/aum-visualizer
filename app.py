@@ -10,34 +10,38 @@ st.set_page_config(page_title="Fund KPI Dashboard", layout="wide")
 # --- カスタムデザイン (CSS) ---
 st.markdown("""
 <style>
-    /* Google Fontsからモダンなフォントを読み込み */
-    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
-    
     html, body, [class*="css"] {
-        font-family: 'Inter', sans-serif;
+        font-family: 'Inter', "Segoe UI", sans-serif;
     }
-    
-    /* 全体の背景を微かなグレーに */
+
+    /* 全体の背景をダークネイビーに */
     .stApp {
-        background-color: #f8fafc;
+        background-color: #0f172a;
     }
-    
-    /* KPIカードのデザイン（角丸と薄い影） */
+
+    /* KPIカードのデザイン（ダーク系のすりガラス風） */
     div[data-testid="metric-container"] {
-        background-color: #ffffff;
-        border: 1px solid #e2e8f0;
-        border-radius: 16px;
+        background-color: #1e293b;
+        border: 1px solid #334155;
+        border-radius: 12px;
         padding: 20px;
-        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+    }
+
+    /* KPIの数値をエメラルドグリーンにし、発光効果（ネオン）をつける */
+    div[data-testid="stMetricValue"] {
+        color: #10b981 !important;
+        font-weight: bold;
+        text-shadow: 0 0 8px rgba(16, 185, 129, 0.4);
     }
     
-    /* KPIの数値を少し太く */
-    div[data-testid="stMetricValue"] {
-        font-weight: 800 !important;
-        color: #0f172a;
+    /* タブの文字色を白系に */
+    button[data-baseweb="tab"] > div {
+        color: #cbd5e1;
     }
 </style>
 """, unsafe_allow_html=True)
+
 st.title("📈 プラットフォーム総合KPIダッシュボード")
 
 uploaded_file = st.file_uploader("月次集計データ（CSV）をアップロードしてください", type="csv")
